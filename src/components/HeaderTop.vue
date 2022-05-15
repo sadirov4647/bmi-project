@@ -15,7 +15,7 @@
                     <b-dropdown-item >Third Action</b-dropdown-item>
                 </b-dropdown>
        </b-nav-item>
-       
+
       </b-navbar-nav>
 
       <b-navbar-nav>
@@ -23,7 +23,7 @@
           <b-form-input size="sm" class="mr-sm-2" placeholder="Qidirmoq"></b-form-input>
           <b-button size="sm" class="my-2 my-sm-0" type="submit">Topmoq</b-button>
         </b-form>
-        
+
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
@@ -33,7 +33,7 @@
 
 <script>
 export default {
-
+  name:"HeaderTop"
 }
 </script>
 

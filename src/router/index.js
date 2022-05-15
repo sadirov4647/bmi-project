@@ -1,16 +1,44 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import HomeView from '../views/HomeView.vue'
 
-import OurProduct from '../components/OurProduct.vue'
+Vue.use(VueRouter)
 
 const routes = [
-    {
-        path: '/our-product',
-        name: 'OurProduct',
-        component: OurProduct
-    }
+  {
+    path: '/',
+    name: 'home',
+    redirect: 'arrivals',
+    component: HomeView,
+    children:[
+      {
+        path:'arrivals',
+        name:'NewArrivals',
+        component:()=> import("../components/Categories/NewArrivals.vue")
+      },
+      {
+        path:'natural',
+        name:'NaturalOrganic',
+        component:()=> import("../components/Categories/NaturalOrganic.vue")
+      },
+      {
+        path:'story',
+        name:'FarmStory',
+        component:()=> import("../components/Categories/FarmStory.vue")
+      },
+      {
+        path:'cake',
+        name:'PlumCake',
+        component:()=> import("../components/Categories/PlumCake.vue")
+      }
+    ]
+  }
 ]
-const router = createRouter({
-    history: createWebHistory(process.env.BASE_URL),
-    routes
+
+const router = new VueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes
 })
-exports.default = router
+
+export default router

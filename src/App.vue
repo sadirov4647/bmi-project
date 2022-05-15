@@ -1,32 +1,34 @@
 <template>
   <div id="app">
-    <Header/>
-    <HeaderTop/>
-    <Product/>
-    <OurProduct/>
+    <router-view />
   </div>
-  
 </template>
 
+
 <script>
-
-import Header from './components/Header.vue'
-import Product from './components/Product.vue'
-import HeaderTop from './components/HeaderTop.vue'
-import OurProduct from './components/OurProduct.vue'
-
 export default {
-  name: 'App',
-  components: {
-    Header,
-    Product,
-    HeaderTop,
-    OurProduct
-    
-  }
-}
+  name: "App",
+};
 </script>
-
 <style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
 
+nav {
+  padding: 30px;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
+}
 </style>
